@@ -34,8 +34,8 @@ public class Menu extends BasicGameState {
 	}
 
 	public void init(GameContainer gc, StateBasedGame sgb) throws SlickException {
-		FondEcran = new Image("C:\\Data\\Game\\game-menu3.jpg");
-		joueur = new Image("C:\\Data\\Game\\pics\\astro1.png");
+		FondEcran = new Image("graphics/interfaces/menu/menu.jpg");
+		joueur = new Image("graphics/interfaces/menu/astro1.png");
 
 		// On rÃ©cupÃ¨re l'instance du gestionnaire d'entrÃ©es
 		input = gc.getInput();
