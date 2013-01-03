@@ -18,7 +18,7 @@ import org.newdawn.slick.state.StateBasedGame;
 
 public class Menu extends BasicGameState {
 
-	public static final int ID = 0; // l'identifiant de l'Ã©tat
+	public static final int ID = 0; // l'identifiant de l'état
 	private Image FondEcran;
 	private Image joueur;// le joueur
 	public int x = 0;// les coordonnées initiales du message
@@ -37,7 +37,7 @@ public class Menu extends BasicGameState {
 		FondEcran = new Image("graphics/interfaces/menu/menu.jpg");
 		joueur = new Image("graphics/interfaces/menu/astro1.png");
 
-		// On rÃ©cupÃ¨re l'instance du gestionnaire d'entrÃ©es
+		// On récupère l'instance du gestionnaire d'entrées
 		input = gc.getInput();
 		input.enableKeyRepeat(300,200);
 	}
@@ -66,19 +66,19 @@ public class Menu extends BasicGameState {
 		//Deplacement perso
 		if ( input.isKeyPressed(Input.KEY_UP))
 		{
-			yJoueur -= 10; // on enlÃ¨ve 10 pixels, Ã  chaque pression, sur sa position, selon l'axe des y pour le faire monter
+			yJoueur -= 5; // on enlève 10 pixels, Ã  chaque pression, sur sa position, selon l'axe des y pour le faire monter
 		}
 		if ( input.isKeyPressed(Input.KEY_DOWN))
 		{
-			yJoueur += 10; // on enlÃ¨ve 10 pixels, Ã  chaque pression, sur sa position, selon l'axe des y pour le faire monter
+			yJoueur += 5; // on enlève 10 pixels, Ã  chaque pression, sur sa position, selon l'axe des y pour le faire monter
 		}
 		if ( input.isKeyPressed(Input.KEY_LEFT))
 		{
-			xJoueur -= 10; // on enlÃ¨ve 10 pixels, Ã  chaque pression, sur sa position, selon l'axe des y pour le faire monter
+			xJoueur -= 5; // on enlève 10 pixels, Ã  chaque pression, sur sa position, selon l'axe des y pour le faire monter
 		}
 		if ( input.isKeyPressed(Input.KEY_RIGHT))
 		{
-			xJoueur += 10; // on enlÃ¨ve 10 pixels, Ã  chaque pression, sur sa position, selon l'axe des y pour le faire monter
+			xJoueur += 5; // on enlève 10 pixels, Ã  chaque pression, sur sa position, selon l'axe des y pour le faire monter
 		}
 
 		//exit correct
@@ -90,13 +90,13 @@ public class Menu extends BasicGameState {
 		if(input.isMouseButtonDown(Input.MOUSE_LEFT_BUTTON))
 		{
 			if (gc.getInput().getAbsoluteMouseX()> 300) {
-				message ="bouton gauche pressÃ©";
+				message ="bouton gauche pressé";
 			}
 			
 		}
 		else if(input.isMouseButtonDown(Input.MOUSE_RIGHT_BUTTON))
 		{
-			message ="bouton droit press�";
+			message ="bouton droit pressé";
 		}
 	}
 
