@@ -16,7 +16,7 @@ import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.BasicGameState;  
 import org.newdawn.slick.state.StateBasedGame;  
 
-public class TestJeu extends BasicGameState {
+public class Menu extends BasicGameState {
 
 	public static final int ID = 0; // l'identifiant de l'Ã©tat
 	private Image FondEcran;
@@ -29,7 +29,7 @@ public class TestJeu extends BasicGameState {
 	private String message="";
 
 
-	public TestJeu() {
+	public Menu() {
 		super();
 	}
 
@@ -96,7 +96,7 @@ public class TestJeu extends BasicGameState {
 		}
 		else if(input.isMouseButtonDown(Input.MOUSE_RIGHT_BUTTON))
 		{
-			message ="bouton droit press�";
+			message ="bouton droit press�";
 		}
 	}
 

@@ -25,8 +25,7 @@ public class GameInit extends StateBasedGame  {
 	}  
 	public static void main(String[] args)   
 	{  
-		try  
-		{  
+		try{  
 			AppGameContainer container = new AppGameContainer(new GameInit());  
 			container.setDisplayMode(1280, 1000, false);// fenêtre de 1280*768 fullscreen =false !!  
 			container.setTargetFrameRate(60);// on règle le FrameRate  
