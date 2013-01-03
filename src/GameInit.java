@@ -1,5 +1,3 @@
-package Game;
-
 /** 
  **cette classe est le point d'entrée du jeu ! 
  */  
