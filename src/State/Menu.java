@@ -23,7 +23,7 @@ public class Menu extends BasicGameState {
 	}
 	
 	public void init(GameContainer gc, StateBasedGame sgb) throws SlickException {
-		rectangle = new Image("C:\\Users\\Nens\\Desktop\\game-menu3.jpg");
+		rectangle = new Image("graphics/interfaces/menu/menu.jpg");
 	}
 	
 	public void render(GameContainer gc, StateBasedGame sgb, Graphics g) throws SlickException {
