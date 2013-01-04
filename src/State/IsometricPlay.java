@@ -3,18 +3,22 @@ package State;
 import org.newdawn.slick.*;
 import org.newdawn.slick.state.*;
 
-public class isometricPlay extends BasicGameState {
+public class IsometricPlay extends BasicGameState {
+	
+	public static final int ID = 1;
+	private Image FondEcran;
 
-	public isometricPlay(int state) {
-		
+	public IsometricPlay() {
+		super();
 	}
 	
 	public void init(GameContainer gc, StateBasedGame sgb) throws SlickException {
-		
+		FondEcran = new Image("graphics/interfaces/menu/menu.jpg");
 	}
 	
 	public void render(GameContainer gc, StateBasedGame sgb, Graphics g) throws SlickException {
-		
+		FondEcran.draw();
+		g.drawString("testttt", 200, 200);
 	}
 	
 	public void update(GameContainer gc, StateBasedGame sgb, int delta) throws SlickException {
@@ -22,6 +26,6 @@ public class isometricPlay extends BasicGameState {
 	}
 	
 	public int getID(){
-		return 1;
+		return ID;
 	}
 }

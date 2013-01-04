@@ -5,11 +5,14 @@ import org.newdawn.slick.AppGameContainer;
 import org.newdawn.slick.GameContainer;  
 import org.newdawn.slick.SlickException;  
 import org.newdawn.slick.state.StateBasedGame;  
+
+import State.IsometricPlay;
 import State.Menu;
 
 public class GameInit extends StateBasedGame  {
 
-	private Menu Menu; // le premier état du jeu (voir Menu.java)  
+	private Menu Menu; // le premier état du jeu (voir Menu.java)
+//	private IsometricPlay is; // le premier état du jeu (voir Menu.java)  
 	private AppGameContainer container; // le conteneur du jeu  
 	public GameInit() {super("Xenobongo");} // le constructeur de la classe  
 	@Override  
@@ -20,8 +23,8 @@ public class GameInit extends StateBasedGame  {
 		}  
 		Menu = new Menu();
 		container.setShowFPS(true);//on ne veut pas voir le FPS ?? mettre alors "false" !  
-		addState(Menu);    //on ajoute le GameState au conteneur
-		
+//		addState( is);
+		addState(Menu);    //on ajoute le Menu au conteneur
 	}  
 	public static void main(String[] args)   
 	{  

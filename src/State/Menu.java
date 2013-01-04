@@ -17,9 +17,19 @@ import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.BasicGameState;  
 import org.newdawn.slick.state.StateBasedGame;  
 
-public class Menu extends BasicGameState {
+/*les classes GUI de slick2D*/
+import org.newdawn.slick.gui.AbstractComponent;
+//import org.newdawn.slick.gui.BasicComponent; //deprecated
+import org.newdawn.slick.gui.ComponentListener;
+import org.newdawn.slick.gui.MouseOverArea;
+
+public class Menu extends BasicGameState implements ComponentListener {
 
 	public static final int ID = 0; // l'identifiant de l'état
+	
+	private StateBasedGame sgb;
+	private GameContainer gc;
+	
 	private Image FondEcran;
 	private Image joueur;// le joueur
 	public int x = 0;// les coordonnées initiales du message
@@ -29,10 +39,14 @@ public class Menu extends BasicGameState {
 	private Input input; /** Instance du gestionnaire Input */
 	private String message="";
 
+	//boutton
+	private MouseOverArea quit;
+	private MouseOverArea play;
+
 	//test font
 	private String fontPath ;  
 	private UnicodeFont uFont; 
-	
+
 	public Menu() {
 		super();
 	}
@@ -50,6 +64,14 @@ public class Menu extends BasicGameState {
 		uFont.addGlyphs(400, 600);  
 		uFont.getEffects().add(new ColorEffect(java.awt.Color.BLUE));   
 		uFont.loadGlyphs();  
+
+		quit = new MouseOverArea(gc,new Image("graphics/interfaces/menu/quit3.png"), 350, 620,this);
+		quit.setNormalColor(new Color(0.7f,0.7f,0.7f,1f));
+		quit.setMouseOverColor(new Color(0.9f,0.9f,0.9f,1f));
+
+		play = new MouseOverArea(gc,new Image("graphics/interfaces/menu/play3.png"), 350, 430, this);
+		play.setNormalColor(new Color(0.7f,0.7f,0.7f,1f));
+		play.setMouseOverColor(new Color(0.9f,0.9f,0.9f,1f));
 	}
 
 	public void render(GameContainer gc, StateBasedGame sgb, Graphics g) throws SlickException {
@@ -58,6 +80,9 @@ public class Menu extends BasicGameState {
 		FondEcran.draw();
 		joueur.draw(xJoueur,yJoueur);
 		uFont.drawString( x , y, message );
+
+		quit.render(gc, g);
+		play.render(gc, g);
 
 	}
 
@@ -98,7 +123,7 @@ public class Menu extends BasicGameState {
 			if (gc.getInput().getAbsoluteMouseX()> 300) {
 				message ="bouton gauche pressé";
 			}
-			
+
 		}
 		else if(input.isMouseButtonDown(Input.MOUSE_RIGHT_BUTTON))
 		{
@@ -108,5 +133,20 @@ public class Menu extends BasicGameState {
 
 	public int getID(){
 		return ID;
+	}
+
+	@Override
+	public void componentActivated(AbstractComponent source) {
+
+		if (source == quit) {
+
+			this.gc.exit();
+
+		}
+		if (source == play) {
+
+			sgb.enterState(0);
+
+		}
 	}
 }
