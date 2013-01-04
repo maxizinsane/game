@@ -12,7 +12,7 @@ import State.Menu;
 public class GameInit extends StateBasedGame  {
 
 	private Menu Menu; // le premier état du jeu (voir Menu.java)
-//	private IsometricPlay is; // le premier état du jeu (voir Menu.java)  
+	private IsometricPlay is; // le premier état du jeu (voir Menu.java)  
 	private AppGameContainer container; // le conteneur du jeu  
 	public GameInit() {super("Xenobongo");} // le constructeur de la classe  
 	@Override  
@@ -21,10 +21,12 @@ public class GameInit extends StateBasedGame  {
 		if (container instanceof AppGameContainer) {
 			this.container = (AppGameContainer) container;// on stocke le conteneur du jeu !  
 		}  
-		Menu = new Menu();
+		Menu = new Menu(0);
+		is = new IsometricPlay(1);
 		container.setShowFPS(true);//on ne veut pas voir le FPS ?? mettre alors "false" !  
-//		addState( is);
+		
 		addState(Menu);    //on ajoute le Menu au conteneur
+		addState( is);
 	}  
 	public static void main(String[] args)   
 	{  

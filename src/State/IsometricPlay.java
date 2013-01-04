@@ -6,10 +6,11 @@ import org.newdawn.slick.state.*;
 public class IsometricPlay extends BasicGameState {
 	
 	public static final int ID = 1;
+	int stateID = -1;
 	private Image FondEcran;
 
-	public IsometricPlay() {
-		super();
+	public IsometricPlay(int id) {
+		 this.stateID = id;
 	}
 	
 	public void init(GameContainer gc, StateBasedGame sgb) throws SlickException {

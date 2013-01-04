@@ -26,6 +26,7 @@ import org.newdawn.slick.gui.MouseOverArea;
 public class Menu extends BasicGameState implements ComponentListener {
 
 	public static final int ID = 0; // l'identifiant de l'état
+	int stateID = -1;
 	
 	private StateBasedGame sgb;
 	private GameContainer gc;
@@ -47,8 +48,8 @@ public class Menu extends BasicGameState implements ComponentListener {
 	private String fontPath ;  
 	private UnicodeFont uFont; 
 
-	public Menu() {
-		super();
+	public Menu(int id) {
+		 this.stateID = id;
 	}
 
 	public void init(GameContainer gc, StateBasedGame sgb) throws SlickException {
@@ -145,7 +146,7 @@ public class Menu extends BasicGameState implements ComponentListener {
 		}
 		if (source == play) {
 
-			sgb.enterState(0);
+			sgb.enterState(1);
 
 		}
 	}
