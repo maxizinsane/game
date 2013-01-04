@@ -28,8 +28,6 @@ public class Menu extends BasicGameState {
 	private Input input; /** Instance du gestionnaire Input */
 	private String message="";
 
-	//test
-
 	public Menu() {
 		super();
 	}
