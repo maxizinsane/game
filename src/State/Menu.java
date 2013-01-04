@@ -63,22 +63,18 @@ public class Menu extends BasicGameState {
 			//y=0;
 		}
 
-		//Deplacement perso
-		if ( input.isKeyPressed(Input.KEY_UP))
-		{
-			yJoueur -= 5; // on enlève 10 pixels, Ã  chaque pression, sur sa position, selon l'axe des y pour le faire monter
+		//Deplacement personnage
+		if ( input.isKeyPressed(Input.KEY_UP)) {
+			yJoueur -= 5; // on enlève 10 pixels, À chaque pression, sur sa position, selon l'axe des y pour le faire monter
 		}
-		if ( input.isKeyPressed(Input.KEY_DOWN))
-		{
-			yJoueur += 5; // on enlève 10 pixels, Ã  chaque pression, sur sa position, selon l'axe des y pour le faire monter
+		if ( input.isKeyPressed(Input.KEY_DOWN)) {
+			yJoueur += 5; // on enlève 10 pixels, À chaque pression, sur sa position, selon l'axe des y pour le faire monter
 		}
-		if ( input.isKeyPressed(Input.KEY_LEFT))
-		{
-			xJoueur -= 5; // on enlève 10 pixels, Ã  chaque pression, sur sa position, selon l'axe des y pour le faire monter
+		if ( input.isKeyPressed(Input.KEY_LEFT)) {
+			xJoueur -= 5; // on enlève 10 pixels, À chaque pression, sur sa position, selon l'axe des y pour le faire monter
 		}
-		if ( input.isKeyPressed(Input.KEY_RIGHT))
-		{
-			xJoueur += 5; // on enlève 10 pixels, Ã  chaque pression, sur sa position, selon l'axe des y pour le faire monter
+		if ( input.isKeyPressed(Input.KEY_RIGHT)) {
+			xJoueur += 5; // on enlève 10 pixels, À chaque pression, sur sa position, selon l'axe des y pour le faire monter
 		}
 
 		//exit correct
