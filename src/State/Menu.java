@@ -7,6 +7,7 @@ import org.newdawn.slick.Input;
 import java.awt.Shape;
 
 import org.newdawn.slick.*;
+import org.newdawn.slick.font.effects.ColorEffect;
 import org.newdawn.slick.geom.Rectangle;
 import org.newdawn.slick.state.*;
 import org.newdawn.slick.Color;
@@ -28,6 +29,10 @@ public class Menu extends BasicGameState {
 	private Input input; /** Instance du gestionnaire Input */
 	private String message="";
 
+	//test font
+	private String fontPath ;  
+	private UnicodeFont uFont; 
+	
 	public Menu() {
 		super();
 	}
@@ -39,6 +44,12 @@ public class Menu extends BasicGameState {
 		// On récupère l'instance du gestionnaire d'entrées
 		input = gc.getInput();
 		input.enableKeyRepeat(300,200);
+		fontPath = "/graphics/font/Mecha.ttf";  
+		uFont = new UnicodeFont(fontPath , 40, false, false);  
+		uFont.addAsciiGlyphs();  
+		uFont.addGlyphs(400, 600);  
+		uFont.getEffects().add(new ColorEffect(java.awt.Color.BLUE));   
+		uFont.loadGlyphs();  
 	}
 
 	public void render(GameContainer gc, StateBasedGame sgb, Graphics g) throws SlickException {
@@ -46,7 +57,7 @@ public class Menu extends BasicGameState {
 		g.setColor(Color.blue);
 		FondEcran.draw();
 		joueur.draw(xJoueur,yJoueur);
-		g.drawString(message, x , y );
+		uFont.drawString( x , y, message );
 
 	}
 
